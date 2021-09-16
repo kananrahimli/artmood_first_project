@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div>
+        <div class="button-container show">
+            <div class="button">Click me</div>
+        </div>
+        <h2>Contact Us</h2>
+        <div class="modal-div">
+            <form>
+                <div>
+                <img src="https://cdn4.iconfinder.com/data/icons/basic-user-interface-elements/700/mail-letter-offer-256.png" alt="icon">
+                 </div>
+                <input type="text" placeholder="Name (required)" required>
+                <input type="text" placeholder="Return address (required)" required>
+                <input type="text" placeholder="Topic (required)" required>
+                <textarea placeholder="Subject (required)" required></textarea>
+                <input type="submit" value="Send">
+              </form>
+        </div>
+        <div class="menu-style ">
+            <div class="boxes">
+                <div class="backdrop" id="backdrop">
+                    <div class="box box1"><a href="#" class="link1 link"></a></div>
+                    <div class="box box2"><a href="" class="link2 link"></a></div>
+                    <div class="box box3"><a href="" class="link3 link"></a></div>
+                    <div class="box box4"><a href="" class="link4 link"></a></div>
+                    <div class="box box5"><a href="" class="link5 link"></a></div>
+                    <div class="box box6"><a href="" class="link6 link"></a></div>
+                </div>
+                <div class="box box1"><a href="#" class="link1 link active"></a></div>
+                <div class="box box2"><a href="#" class="link2 link "></a></div>
+                <div class="box box3"><a href="#" class="link3 link "></a></div>
+                <div class="box box4"><a href="#" class="link4 link "></a></div>
+                <div class="box box5"><a href="#" class="link5 link "></a></div>
+                <div class="box box6"><a href="#" class="link6 link "></a></div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <script>
+        $(document).ready(function () {
+            let link1 = $('.link1');
+            let link2 = $('.link2');
+            let link3 = $('.link3');
+            let link4 = $('.link4');
+            let link5 = $('.link5');
+            let link6 = $('.link6');
+            let link=$('.link')
+            let modal=$('.modal-div')
+            let box = $('.box');
+            let box1 = $('.box1');
+            let box2 = $('.box2');
+            let box3 = $('.box3');
+            let box4 = $('.box4');
+            let box5 = $('.box5');
+            let box6 = $('.box6');
+            let btnContainer = $('.button-container');
+            let btn = $('.button');
+            let backdrop = $('.backdrop');
+            let menuStyle = $('.menu-style')
+
+            backdrop.click(function () {
+                backdrop.fadeToggle('slow')
+                menuStyle.toggleClass('z-index')
+                box.removeClass('hide')
+                if(modal.hasClass('active')){
+                    modal.removeClass('active')
+                } 
+
+                if (btnContainer.hasClass('hide')) {
+                    btnContainer.addClass('show')
+                    btnContainer.removeClass('hide')
+                }
+
+                if (link1.html() === "") {
+                    link1.html('Home')
+                } else {
+                    link1.html('')
+                }
+
+
+                if (link2.html() === "") {
+                    link2.html('Contact')
+                } else {
+                    link2.html('')
+                }
+
+
+                if (link3.html() === "") {
+                    link3.html('Projects')
+                } else {
+                    link3.html('')
+                }
+
+
+                if (link4.html() === "") {
+                    link4.html('About')
+                } else {
+                    link4.html('')
+                }
+
+                if (link5.html() === "") {
+                    link5.html('Services')
+                } else {
+                    link5.html('')
+                }
+
+
+
+
+                if (box1.hasClass('tomenu')) {
+                    box1.addClass('tobox')
+                    box1.removeClass('tomenu')
+                } else if (!box1.hasClass('tomenu')) {
+                    box1.addClass('tomenu')
+                    box1.removeClass('tobox')
+                }
+                ;
+
+                if (box2.hasClass('tomenu2')) {
+                    box2.addClass('tobox2')
+                    box2.removeClass('tomenu2')
+                } else if (!box2.hasClass('tomenu2')) {
+                    box2.addClass('tomenu2')
+                    box2.removeClass('tobox2')
+                };
+
+                if (box3.hasClass('tomenu3')) {
+                    box3.addClass('tobox3')
+                    box3.removeClass('tomenu3')
+                } else if (!box3.hasClass('tomenu3')) {
+                    box3.addClass('tomenu3')
+                    box3.removeClass('tobox3')
+                };
+
+                if (box4.hasClass('tomenu4')) {
+                    box4.addClass('tobox4')
+                    box4.removeClass('tomenu4')
+                } else if (!box4.hasClass('tomenu4')) {
+                    box4.addClass('tomenu4')
+                    box4.removeClass('tobox4')
+                };
+                if (box5.hasClass('tomenu5')) {
+                    box5.addClass('tobox5')
+                    box5.removeClass('tomenu5')
+                } else if (!box5.hasClass('tomenu5')) {
+                    box5.addClass('tomenu5')
+                    box5.removeClass('tobox5')
+                };
+                if (box6.hasClass('tomenu6')) {
+                    box6.addClass('tobox6')
+                    box6.removeClass('tomenu6')
+                } else if (!box6.hasClass('tomenu6')) {
+                    box6.addClass('tomenu6')
+                    box6.removeClass('tobox6')
+                };
+            })
+
+            btn.click(function () {
+                backdrop.fadeToggle('slow')
+
+                menuStyle.toggleClass('z-index')
+
+                if (btnContainer.hasClass('show')) {
+                    btnContainer.addClass('hide')
+                    btnContainer.removeClass('show')
+                }
+
+
+                if (link1.html() === "") {
+                    link1.html('Home')
+                } else {
+                    link1.html('')
+                }
+
+
+                if (link2.html() === "") {
+                    link2.html('Contact')
+                } else {
+                    link2.html('')
+                }
+
+
+                if (link3.html() === "") {
+                    link3.html('Projects')
+                } else {
+                    link3.html('')
+                }
+
+
+                if (link4.html() === "") {
+                    link4.html('About')
+                } else {
+                    link4.html('')
+                }
+
+                if (link5.html() === "") {
+                    link5.html('Services')
+                } else {
+                    link5.html('')
+                }
+
+
+                if (box1.hasClass('tomenu')) {
+                    box1.addClass('tobox')
+                    box1.removeClass('tomenu')
+                } else if (!box1.hasClass('tomenu')) {
+                    box1.addClass('tomenu')
+                    box1.removeClass('tobox')
+                }
+                ;
+
+                if (box2.hasClass('tomenu2')) {
+                    box2.addClass('tobox2')
+                    box2.removeClass('tomenu2')
+                } else if (!box2.hasClass('tomenu2')) {
+                    box2.addClass('tomenu2')
+                    box2.removeClass('tobox2')
+                };
+
+                if (box3.hasClass('tomenu3')) {
+                    box3.addClass('tobox3')
+                    box3.removeClass('tomenu3')
+                } else if (!box3.hasClass('tomenu3')) {
+                    box3.addClass('tomenu3')
+                    box3.removeClass('tobox3')
+                };
+
+                if (box4.hasClass('tomenu4')) {
+                    box4.addClass('tobox4')
+                    box4.removeClass('tomenu4')
+                } else if (!box4.hasClass('tomenu4')) {
+                    box4.addClass('tomenu4')
+                    box4.removeClass('tobox4')
+                };
+
+                if (box5.hasClass('tomenu5')) {
+                    box5.addClass('tobox5')
+                    box5.removeClass('tomenu5')
+                } else if (!box5.hasClass('tomenu5')) {
+                    box5.addClass('tomenu5')
+                    box5.removeClass('tobox5')
+                };
+
+                if (box6.hasClass('tomenu6')) {
+                    box6.addClass('tobox6')
+                    box6.removeClass('tomenu6')
+                } else if (!box6.hasClass('tomenu6')) {
+                    box6.addClass('tomenu6')
+                    box6.removeClass('tobox6')
+                };
+            })
+
+            $('.link').click(function(){
+                if(!modal.hasClass('active')){
+                    modal.toggleClass('active')
+                }
+                box.addClass('hide')
+
+                link.removeClass('active')
+                $(this).addClass('active')
+                
+            })
+
+            
+        })
+    </script>
+</body>
+
+</html>
