@@ -1482,6 +1482,11 @@ select {
   justify-self: baseline;
 }
 
+.submit.disabled{
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 .input-file {
   display: none;
 }
