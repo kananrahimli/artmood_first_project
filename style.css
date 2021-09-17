@@ -1050,114 +1050,10 @@ button {
 
 /* Box6 end */
 
-/* CONTACT start */
 
-h3 {
-  font-weight: 700;
-}
 
-.contact-container {
-  position: relative;
-  padding: 40px 80px;
-  background: rgb(255, 251, 251);
-  border-radius: 3px;
-  box-shadow: 0px 0px 2px 2px rgb(0 0 0 / 10%);
-  width: 90%;
-}
 
-select {
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.inputs-group {
-  position: relative;
-}
-
-.inputs-group label {
-  position: absolute;
-  background: #ffffff;
-  cursor: text;
-  left: 2rem;
-  font-size: 20px;
-  top: 22px;
-  transition: all 200ms ease-in;
-}
-
-.form-input:focus ~ .form-label,
-.form-input.active ~ .form-label {
-  top: 2px;
-  font-size: 16px;
-}
-
-.inputs-group input,
-.desire,
-select {
-  width: 100%;
-  padding: 10px 10px;
-  border-radius: 10px;
-  margin: 15px 0;
-
-  outline: none;
-  border: 2px solid #000;
-}
-
-.inputs-group input.desire {
-  height: 150px;
-  padding: 0 10px;
-}
-
-.img-code {
-  background: #b8b8b8;
-  height: 45px;
-  /* margin-right: 26rem; */
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.submit {
-  background: #0f5373;
-  border-radius: 6px;
-  border: 1px solid #0f5373;
-  color: #ffffff;
-  font-size: 18px;
-  padding: 14px 55px;
-  font-weight: bold;
-  align-self: baseline;
-  justify-self: baseline;
-}
-
-.input-file {
-  display: none;
-}
-
-.file-label {
-  border-radius: 6px;
-  /* border: 1px solid #0f5373; */
-  color: #ffffff;
-  font-size: 18px;
-  padding: 16px 40px;
-  font-weight: bold;
-  background: #e8e8e8;
-  color: gray;
-  cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-  .contact-container {
-    position: relative;
-    padding: 40px 0px;
-    background: rgb(255, 251, 251);
-    border-radius: 3px;
-    box-shadow: 0px 0px 2px 2px rgb(0 0 0 / 10%);
-    width: 90%;
-  }
-}
-
-/* CONTACT start */
-
+/* Cat start */
 .cat {
   position: fixed;
   top: 10px;
@@ -1497,3 +1393,142 @@ select {
     transform: translate(0px, 3px) rotate(0deg);
   }
 }
+
+
+/* Cat end */
+
+
+
+
+
+
+
+
+/* CONTACT start */
+
+h3 {
+  font-weight: 700;
+}
+
+.contact-container {
+  position: relative;
+  padding: 40px 80px;
+  background: rgb(255, 251, 251);
+  border-radius: 3px;
+  box-shadow: 0px 0px 2px 2px rgb(0 0 0 / 10%);
+  width: 90%;
+}
+
+select {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.inputs-group {
+  position: relative;
+}
+
+.inputs-group label {
+  position: absolute;
+  background: #ffffff;
+  cursor: text;
+  left: 2rem;
+  font-size: 20px;
+  top: 22px;
+  transition: all 200ms ease-in;
+}
+
+.form-input:focus ~ .form-label,
+.form-input.active ~ .form-label {
+  top: 2px;
+  font-size: 16px;
+}
+
+.inputs-group input,
+.desire,
+select {
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: 10px;
+  margin: 15px 0 5px;
+  outline: none;
+  border: 2px solid #000;
+}
+
+.inputs-group input.desire {
+  height: 150px;
+  padding: 0 10px;
+}
+
+.img-code {
+  background: #b8b8b8;
+  height: 45px;
+  /* margin-right: 26rem; */
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.submit {
+  background: #0f5373;
+  border-radius: 6px;
+  border: 1px solid #0f5373;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 14px 55px;
+  font-weight: bold;
+  align-self: baseline;
+  justify-self: baseline;
+}
+
+.input-file {
+  display: none;
+}
+
+.file-label {
+  border-radius: 6px;
+  /* border: 1px solid #0f5373; */
+  color: #ffffff;
+  font-size: 18px;
+  padding: 16px 40px;
+  font-weight: bold;
+  background: #e8e8e8;
+  color: gray;
+  cursor: pointer;
+}
+
+.error,.incorrect-email,.incorrect-phone{
+  color: red;
+  display: none;
+}
+
+/* .incorrect-email.show{
+  display: block;
+} */
+
+/* .incorrect-phone.show{
+  display: block;
+} */
+
+.error.show{
+  display: block;
+}
+
+.form-input.invalid{
+  border: 2px solid red;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-container {
+    position: relative;
+    padding: 40px 0px;
+    background: rgb(255, 251, 251);
+    border-radius: 3px;
+    box-shadow: 0px 0px 2px 2px rgb(0 0 0 / 10%);
+    width: 90%;
+  }
+}
+
+/* CONTACT end */
+

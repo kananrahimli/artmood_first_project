@@ -17,7 +17,8 @@
         <div class="contact-container d-flex flex-column  align-items-center ">
             <h3 class="contact-title mb-4 px-md-0 px-4 ">Kibertəhlükəsizlik insidentini bildirin</h3>
             <div class="contact-content">
-                <p class="px-md-0 px-4 ">Elektron Təhlükəsizlik Xidməti informasiya sistemlərinə yönəlmiş kiberhücumların qarşısını almaq üçün
+                <p class="px-md-0 px-4 ">Elektron Təhlükəsizlik Xidməti informasiya sistemlərinə yönəlmiş
+                    kiberhücumların qarşısını almaq üçün
                     məlumatların operativ qəbulu və insidentlərin analizi, internet şəbəkəsinin və informasiya
                     sistemlərinin kibertəhlükəsizliyinə yaranan təhdidlər haqqında vaxtında məlumat verilməsi və
                     kompüter insidentlərinin təhqiqatında əhaliyə və özəl sektora metodiki köməklik göstərilməsi
@@ -27,22 +28,30 @@
                 <div class="inputs-group col-md-6">
                     <input class="form-input" type="text" id="name">
                     <label for="name" class="form-label">Ad*</label>
+                    <span class="error">Bu hissə boş qala bilməz</span>
                 </div>
                 <div class="inputs-group col-md-6">
                     <input class="form-input" type="text" id="surname">
                     <label for="surname" class="form-label">Soyad*</label>
+                    <span class="error">Bu hissə boş qala bilməz</span>
                 </div>
                 <div class="inputs-group col-md-6">
                     <input class="form-input" type="text" id="company">
                     <label for="company" class="form-label">Təşkilat*</label>
+                    <span class="error">Bu hissə boş qala bilməz</span>
                 </div>
                 <div class="inputs-group col-md-6">
-                    <input class="form-input" type="text" id="gmail">
+                    <input class="form-input email" type="text" id="gmail" autocomplete="off">
                     <label for="gmail" class="form-label">E-poçt*</label>
+                    <span class="error">Bu hissə boş qala bilməz</span>
+                    <span class="incorrect-email">Email forması düzgün deyil</span>
                 </div>
+
                 <div class="inputs-group col-md-6">
-                    <input class="form-input" type="text" id="phone">
+                    <input class="form-input phone" type="tel" id="phone" autocomplete="off">
                     <label for="phone" class="form-label">Telefon*</label>
+                    <span class="error">Bu hissə boş qala bilməz</span>
+                    <span class="incorrect-phone">Nömrəni düzgün daxil edin</span>
                 </div>
                 <div class="inputs-group col-md-6">
                     <select name="" id="">
@@ -52,49 +61,75 @@
                         <option value="">TEST</option>
                         <option value="">TEST</option>
                         <option value="">TEST</option>
-                        
+
                     </select>
-                    
+
                 </div>
                 <div class="inputs-group col-md-12 ">
-                    <textarea name="" id="" cols="3" rows="5" class="desire form-input" ></textarea>
+                    <textarea name="" id="" cols="3" rows="5" class="desire form-input"></textarea>
                     <label for="name" class="form-label">Ətraflı yaz*</label>
+                    <span class="error">Bu hissə boş qala bilməz</span>
                 </div>
                 <div class="inputs-group col-md-6">
                     <input type="text" id="name">
                 </div>
-                <div class=" img-code col-md-2 col-4 mt-md-3 mt-3 mr-auto ml-md-0 ml-3 d-flex justify-content-center align-items-center" >
-                   852364
+                <div
+                    class=" img-code col-md-2 col-4 mt-md-3 mt-3 mr-auto ml-md-0 ml-3 d-flex justify-content-center align-items-center">
+                    852364
                 </div>
 
 
                 <div class="col-md-6 mt-5 d-flex flex-wrap action">
-                    <button class="submit mb-md-0 mb-0 mr-md-5 mr-0 mb-md-0 mb-3 " >Göndər</button>
+                    <button class="submit mb-md-0 mb-0 mr-md-5 mr-0 mb-md-0 mb-3 ">Göndər</button>
                     <input class="input-file " type="file" name="" id="file">
                     <label for="file" class="file-label"> Fayl əlavə et</label>
                     <span class="mt-4">* - ilə doldurulması vacib olan xanalar</span>
                 </div>
-                
+
             </div>
         </div>
     </div>
 
     <script>
-        $(document).ready(function(){
-            $('.form-input').on('input',function(){
-                if($(this).val().length>0){
-                $(this).addClass('active')
-                console.log('ssllsls');
-            }
+        $(document).ready(function () {
+            $('.form-input').on('input', function () {
+                if ($(this).val().length > 0) {
+                    $(this).addClass('active')
+                }
 
             })
-            $('.form-input').on('blur',function(){
-                if(!$(this).val().length>0){
-                $(this).removeClass('active');
-                
+
+
+            $('.form-input').on('blur', function () {
+                if (!$(this).val().length > 0) {
+                    $(this).removeClass('active');
+                    $(this).addClass('invalid')
+                    $(this).parent(".inputs-group").find('.error').addClass('show')
+
+                } else if (!$(this).parent(".inputs-group").find('.email').val().includes('@')) {
+                    $(this).addClass('invalid')
+                    $('.incorrect-email').css('display', 'block')
                 }
+
+                if (($(this).parent(".inputs-group").find('.phone').val().length != 13 ||
+                    $(this).parent(".inputs-group").find('.phone').val().length != 12 ||
+                    $(this).parent(".inputs-group").find('.phone').val().length != 10) &&
+                    ($(this).parent(".inputs-group").find('.phone').val().length > 0)) {
+                        
+                    $(this).addClass('invalid')
+                    $('.incorrect-phone').css('display', 'block')
+                }
+
             })
-           
+
+
+
+            $('.form-input').focus(function () {
+                $(this).removeClass('invalid')
+                $(this).parent(".inputs-group").find('.error').removeClass('show')
+                $(this).parent(".inputs-group").find('.incorrect-email').css('display', 'none')
+                $(this).parent(".inputs-group").find('.incorrect-phone').css('display', 'none')
+            })
         })
     </script>
 </body>
