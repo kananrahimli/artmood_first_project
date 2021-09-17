@@ -13,12 +13,76 @@
 </head>
 
 <body>
-
+    
     <div>
-        <div class="button-container show">
-            <div class="button">Click me</div>
+        <h2 class="navbar-brand logo">LOGO</h2>
+        <div class="cat">
+            <div class="cat__head">
+                <div class="cat__eyes">
+                    <div class="cat__eye cat__eye-left"></div>
+                    <div class="cat__eye cat__eye-right"></div>
+                </div>
+                <div class="cat__ears">
+                    <div class="cat__ear cat__ear-left"></div>
+                    <div class="cat__ear cat__ear-right"></div>
+                </div>
+            </div>
+            <div class="cat__body"></div>
+            <div class="cat__tail">
+                <div class="line-one">
+                    <div class="line-one">
+                        <div class="line-one">
+                            <div class="line-one">
+                                <div class="line-one">
+                                    <div class="line-one">
+                                        <div class="line-one">
+                                            <div class="line-one">
+                                                <div class="line-one">
+                                                    <div class="line-one">
+                                                        <div class="line-two">
+                                                            <div class="line-two">
+                                                                <div class="line-two">
+                                                                    <div class="line-two">
+                                                                        <div class="line-two">
+                                                                            <div class="line-two">
+                                                                                <div class="line-two">
+                                                                                    <div class="line-two">
+                                                                                        <div class="line-two">
+                                                                                            <div class="line-two">
+                                                                                                <div class="line-two">
+                                                                                                    <div class="line-two">
+                                                                                                        <div
+                                                                                                            class="line-two">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <h2>Contact Us</h2>
+        <div class="button-container show">
+            <!-- <div class="button">Click me</div> -->
+        </div>
+        <h2 class="home-title pl-md-5 pl-3 py-5 mt-5">Müraciət etmək istəyirsiniz?</h2>
+        <h4 class="home-title-2 pl-md-5 pl-3 pr-md-0 pr-5">Zəhmət olmasa ekrana iki dəfə toxunun.</h4>
         <div class="menu-style ">
             <div class="boxes">
                 <div class="backdrop" id="backdrop">
@@ -54,7 +118,7 @@
             let link4 = $('.link4');
             let link5 = $('.link5');
             let link6 = $('.link6');
-            let link=$('.link')
+            let link = $('.link')
             let box = $('.box');
             let box1 = $('.box1');
             let box2 = $('.box2');
@@ -66,12 +130,13 @@
             let btn = $('.button');
             let backdrop = $('.backdrop');
             let menuStyle = $('.menu-style')
+            let body = $('body')
 
             backdrop.click(function () {
                 backdrop.fadeToggle('slow')
                 menuStyle.toggleClass('z-index')
                 box.removeClass('hide')
-               
+
 
                 if (btnContainer.hasClass('hide')) {
                     btnContainer.addClass('show')
@@ -162,7 +227,7 @@
                 };
             })
 
-            btn.click(function () {
+            body.dblclick(function () {
                 backdrop.fadeToggle('slow')
                 menuStyle.toggleClass('z-index')
 
@@ -256,14 +321,14 @@
                 };
             })
 
-            $('.link').click(function(){
+            $('.link').click(function () {
 
                 link.removeClass('active')
                 $(this).addClass('active')
-                
+
             })
 
-            
+
         })
     </script>
 </body>
